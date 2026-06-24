@@ -1,0 +1,190 @@
+:root {
+    --bg-main: #0a0a1a;
+    --bg-card: #1a1a2e;
+    --neon-blue: #00f1c3;
+    --neon-cyan: #00b4d8;
+    --text-white: #e2e8f0;
+    --text-gray: #8892b0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-white);
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.7;
+}
+
+/* ============= NEON EFFECTS ============= */
+.neon-text {
+    text-shadow: 
+        0 0 5px var(--neon-cyan),
+        0 0 10px var(--neon-cyan),
+        0 0 20px var(--neon-blue);
+}
+
+h1, h2, h3 {
+    text-shadow: 0 0 8px var(--neon-cyan);
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(6, 13, 26, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 1px solid rgba(0, 180, 216, 0.2);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-white);
+}
+
+.dev {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px var(--neon-cyan);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    background: linear-gradient(135deg, #0a0a1a, #1a1a2e);
+}
+
+.name {
+    font-size: 58px;
+    font-weight: 800;
+}
+
+.sub-title {
+    font-size: 36px;
+    color: var(--text-gray);
+}
+
+#typing-text {
+    color: var(--neon-blue);
+    font-weight: 600;
+    text-shadow: 0 0 10px var(--neon-blue);
+    border-right: 3px solid var(--neon-blue);
+    animation: blink 0.8s step-end infinite;
+}
+
+/* Buttons Neon */
+.btn {
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: transparent;
+    border: 2px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    box-shadow: 0 0 10px rgba(0, 241, 195, 0.3);
+}
+
+.btn-primary:hover {
+    background: rgba(0, 241, 195, 0.1);
+    box-shadow: 0 0 20px var(--neon-cyan);
+    transform: translateY(-4px);
+}
+
+.btn-secondary {
+    background: var(--neon-blue);
+    color: #000;
+    box-shadow: 0 0 15px var(--neon-blue);
+}
+
+.btn-secondary:hover {
+    box-shadow: 0 0 25px var(--neon-blue);
+    transform: translateY(-4px);
+}
+
+/* About Section - Bigger Font */
+.about-text p {
+    font-size: 17px;           /* Badha diya */
+    margin-bottom: 18px;
+    line-height: 1.8;
+}
+
+.code-box {
+    background-color: #0f1626;
+    border: 1px solid rgba(0, 180, 216, 0.3);
+    border-radius: 8px;
+    padding: 20px;
+    font-size: 15px;           /* Code bhi bada */
+    box-shadow: 0 0 15px rgba(0, 180, 216, 0.2);
+}
+
+/* Cards Neon Hover */
+.skill-card, .project-card, .contact-box {
+    background-color: var(--bg-card);
+    padding: 28px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 180, 216, 0.2);
+    transition: all 0.4s ease;
+}
+
+.skill-card:hover, .project-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--neon-cyan);
+    box-shadow: 
+        0 0 15px rgba(0, 241, 195, 0.3),
+        0 0 30px rgba(0, 180, 216, 0.2);
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 28px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--neon-blue);
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-gray);
+    font-size: 14px;
+}
+
+/* Animation */
+@keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--neon-blue); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .name { font-size: 45px; }
+    .sub-title { font-size: 28px; }
+    .about-text p { font-size: 16px; }
+}
